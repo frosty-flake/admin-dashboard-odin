@@ -3,6 +3,10 @@
   https://www.joshwcomeau.com/css/custom-css-reset/
 */
 
+:root {
+    --blue: rgb(13, 126, 255);
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -65,4 +69,59 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     font-style: normal;
     font-display: swap;
+}
+
+#main-container {
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    display: grid;
+    grid-template-columns: minmax(max-content, 20vw) 1fr;
+}
+
+#sidebar {
+    background-color: var(--blue);
+    grid-row : 1 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#sidebar .logo {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+}
+
+header {
+    background-color: white;
+    display: grid;
+    grid-template-rows: fit-content fit-content; 
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-row > * {
+    display: flex;
+    align-items: center;
+}
+
+main {
+    background-color: rgb(221, 221, 221);
+    display: grid;
+    grid-template-columns: 1fr 20vw;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content;
+    grid-auto-rows: max(3rem, 200px);
+}
+
+h2:first-child {
+    grid-column: 1 / -1;
 }
