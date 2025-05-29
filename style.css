@@ -5,6 +5,7 @@
 
 :root {
     --blue: rgb(32, 135, 252);
+    --light-blue: rgb(219, 235, 250);
     --text-gray: rgb(107, 107, 107);
 }
 
@@ -78,6 +79,7 @@ h1, h2, h3, h4, h5, h6 {
     height: auto;
     display: grid;
     grid-template-columns: minmax(max-content, 20vw) 1fr;
+    grid-template-rows: max-content 1fr;
 }
 
 #sidebar {
@@ -139,22 +141,90 @@ h1, h2, h3, h4, h5, h6 {
 header {
     background-color: white;
     display: grid;
-    grid-template-rows: fit-content fit-content; 
+    grid-template-columns: 2fr 1fr; 
+    grid-template-rows: 1fr 1fr;
+    row-gap: 10px;
+    width: 100%;
+    height: fit-content;
+    padding: 10px 50px;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.searchbar input {
+  appearance: none;
+
+  border: none;
+  background-color: var(--light-blue);
+  border-radius: 1em;
+  height: 2rem;
+  flex: 1;
+  max-width: 70%
+}
+
+.profile-picture,
+.profile-picture-big {
+  height: auto;
+  border-radius: 100%;
+}
+
+.profile-picture {
+  width: 50px;
+}
+
+.profile-picture-big {
+  width: 70px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.profile > p {
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.profile-big {
+  font-weight: 900;
+}
+
+.profile-big p:last-child {
+  font-size: 1.4rem;
 }
 
 .header-row {
+    grid-column: 1 / 3; 
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .header-row > * {
     display: flex;
     align-items: center;
+    gap: 30px;
+}
+
+.header-buttons button {
+  border: none;
+  background-color: var(--blue);
+  border-radius: 25px;
+  padding: 10px 30px;
+  color: white;
+  font-weight: 900;
 }
 
 main {
-    background-color: rgb(219, 235, 250);
+    background-color: var(--light-blue);
     display: grid;
     grid-template-columns: 1fr 20vw;
     gap: 1em;
@@ -199,7 +269,7 @@ main {
   font-weight: 900;
 }
 
-.card img {
+.icon {
   width: 30px;
   height: auto;
 }
