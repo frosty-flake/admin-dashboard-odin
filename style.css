@@ -4,7 +4,7 @@
 */
 
 :root {
-    --blue: rgb(13, 126, 255);
+    --blue: rgb(32, 135, 252);
     --text-gray: rgb(107, 107, 107);
 }
 
@@ -85,16 +85,55 @@ h1, h2, h3, h4, h5, h6 {
     grid-row : 1 / 3;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 70px;
+    padding: 20px 30px;
+    padding-right: 50px;
 }
 
 #sidebar .logo {
-    display: grid;
-    grid-template-columns: max-content 1fr;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo .dashboard-icon {
+  width: 50px;
+  height: auto;
+}
+
+.logo p {
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar ul li + li {
+  margin-top: 20px;
+}
+
+#sidebar ul li {
+  padding-left: 10px;
+}
+
+#sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+  font-size: 1.5em;
 }
 
 #sidebar .nav-icon {
   display: inline;
+  width: 30px;
+  height: auto;
 }
 
 header {
